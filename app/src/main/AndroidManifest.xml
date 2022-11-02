@@ -46,6 +46,19 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name="com.example.mad315_spaceshooter.spaceshooter.SpaceShooter_MainActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name="com.example.spaceshooter.StartUp"
+            android:exported="false"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name="com.example.spaceshooter.GameOver"
+            android:screenOrientation="landscape"></activity>
+
     </application>
 
 </manifest>
