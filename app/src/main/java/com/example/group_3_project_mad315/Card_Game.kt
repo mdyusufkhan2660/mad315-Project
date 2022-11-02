@@ -9,3 +9,5 @@ class Card_Game : AppCompatActivity() {
         setContentView(R.layout.activity_card_game)
     }
 }
+
+//tfcyvgubhnjmk
