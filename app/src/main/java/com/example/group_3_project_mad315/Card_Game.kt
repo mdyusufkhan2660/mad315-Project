@@ -10,4 +10,3 @@ class Card_Game : AppCompatActivity() {
     }
 }
 
-//tfcyvgubhnjmk

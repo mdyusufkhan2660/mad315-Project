@@ -59,6 +59,11 @@
             android:name="com.example.spaceshooter.GameOver"
             android:screenOrientation="landscape"></activity>
 
+        <activity
+            android:name="com.example.hangmangame.Hangman_MainActivity"
+            android:exported="false">
+        </activity>
+
     </application>
 
 </manifest>
