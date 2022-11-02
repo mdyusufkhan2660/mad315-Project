@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.example.hangmangame.Hangman_MainActivity
 import com.example.mad315_spaceshooter.spaceshooter.SpaceShooter_MainActivity
 import com.example.spaceshooter.StartUp
 
@@ -31,7 +32,8 @@ class Game_List : AppCompatActivity() {
         }
 
         game2.setOnClickListener {
-            Toast.makeText(applicationContext,"Game 2 Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Hangman_MainActivity::class.java))
+            finish()
         }
 
         game3.setOnClickListener {
