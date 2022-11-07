@@ -1,5 +1,6 @@
 package com.example.group_3_project_mad315.tictactoe
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -21,12 +22,12 @@ class TictacActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityTictacBinding
     val vm: MainActivityViewModel by viewModels()
-
+    private lateinit var sharedPref:SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTictacBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        sharedPref = getSharedPreferences("myPref", MODE_PRIVATE)
         vm.board.observe(this, updateBoard)
         bindClickEvents()
     }
@@ -151,6 +152,10 @@ class TictacActivity : AppCompatActivity() {
         }
         if(game_over==true){
             game_over=false
+            val editor =sharedPref.edit()
+            editor.putInt("startsscore",starsScore)
+            editor.putInt("crossscore",crossScore)
+            editor.apply()
             count=0
         }
 
