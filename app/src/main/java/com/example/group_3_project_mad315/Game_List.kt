@@ -29,21 +29,21 @@ class Game_List : AppCompatActivity() {
         val gme4 = findViewById<TextView>(R.id.gme4)
 
         game1.setOnClickListener {
-            startActivity(Intent(this, StartUp::class.java))
-            finish()
+            Toast.makeText(applicationContext,"Ball and Block Game Launched",Toast.LENGTH_SHORT).show()
         }
 
         game2.setOnClickListener {
-            startActivity(Intent(this, Hangman_MainActivity::class.java))
-            finish()
-        }
-
-        game3.setOnClickListener {
             startActivity(Intent(this, TictacActivity::class.java))
             finish()
         }
 
+        game3.setOnClickListener {
+            startActivity(Intent(this, StartUp::class.java))
+            finish()
+        }
+
         game4.setOnClickListener {
+
             Toast.makeText(applicationContext,"Game 4 Launched",Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, Start::class.java))
             finish()
@@ -51,16 +51,19 @@ class Game_List : AppCompatActivity() {
 
 
         gme1.setOnClickListener {
-            Toast.makeText(applicationContext,"Game 1 Launched",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"Ball and Block Game Launched",Toast.LENGTH_SHORT).show()
         }
         gme2.setOnClickListener {
-            Toast.makeText(applicationContext,"Game 2 Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, TictacActivity::class.java))
+            finish()
         }
         gme3.setOnClickListener {
-            Toast.makeText(applicationContext,"Game 3 Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, StartUp::class.java))
+            finish()
         }
         gme4.setOnClickListener {
-            Toast.makeText(applicationContext,"Game 4 Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Hangman_MainActivity::class.java))
+            finish()
         }
 
     }

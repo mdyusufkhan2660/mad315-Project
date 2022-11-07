@@ -14,7 +14,10 @@ class Card_Game_Info : AppCompatActivity() {
 
         val btn = findViewById<Button>(R.id.play_card_game)
         btn.setOnClickListener {
-            val intent = Intent(this, Card_Game::class.java)
+            //val intent = Intent(this, Card_Game::class.java)
+            //startActivity(intent)
+
+            val intent = Intent(this, CardActivity::class.java)
             startActivity(intent)
         }
 
