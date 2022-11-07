@@ -6,6 +6,9 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.group_3_project_mad315.tictactoe.TictacActivity
+import com.example.hangmangame.Hangman_MainActivity
+import com.example.spaceshooter.StartUp
 import kotlinx.android.synthetic.main.activity_card.*
 
 private const val TAG = "CardActivity"
@@ -20,10 +23,10 @@ class CardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_card)
 
         val images = mutableListOf(
-            R.drawable.first,
-            R.drawable.ic_light,
-            R.drawable.ic_plane,
-            R.drawable.ic_smiley
+            R.drawable.tictactoe,
+            R.drawable.ballandblock,
+            R.drawable.hangman,
+            R.drawable.spaceshooter
         )
         // Add each image twice so we can create pairs
         images.addAll(images)
@@ -54,7 +57,7 @@ class CardActivity : AppCompatActivity() {
             if (card.isMatched) {
                 button.alpha = 0.1f
             }
-            button.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.ic_code)
+            button.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.question)
         }
     }
 
@@ -98,33 +101,33 @@ class CardActivity : AppCompatActivity() {
 
             Log.i("tag",cards[position1].identifier.toString())
 
-            if(cards[position1].identifier==2131099743){
-                Toast.makeText(this, "heart launched", Toast.LENGTH_SHORT).show()
-             //   val intent = Intent(this, SomeActivity::class.java)
-            //    startActivity(intent)
+            if(cards[position1].identifier==2131230989){
+//                Toast.makeText(this, "heart launched", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, TictacActivity::class.java)
+                startActivity(intent)
 
             }
-            else if (cards[position1].identifier==2131099747)
+            else if (cards[position1].identifier==2131230969)
             {
-                Toast.makeText(this, "lightening launched", Toast.LENGTH_SHORT).show()
+                // Toast.makeText(this, "lightening launched", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, StartUp::class.java)
+                startActivity(intent)
+
+
+            }
+            else if (cards[position1].identifier==2131230836)
+            {
+                Toast.makeText(this, "Ball and Block ", Toast.LENGTH_SHORT).show()
                 //   val intent = Intent(this, SomeActivity::class.java)
                 //    startActivity(intent)
 
 
             }
-            else if (cards[position1].identifier==2131099748)
+            else if (cards[position1].identifier==2131230868)
             {
-                Toast.makeText(this, "plane launched", Toast.LENGTH_SHORT).show()
-                //   val intent = Intent(this, SomeActivity::class.java)
-                //    startActivity(intent)
 
-
-            }
-            else if (cards[position1].identifier==2131099749)
-            {
-                Toast.makeText(this, "smilie launched", Toast.LENGTH_SHORT).show()
-                //   val intent = Intent(this, SomeActivity::class.java)
-                //    startActivity(intent)
+                val intent = Intent(this, Hangman_MainActivity::class.java)
+                startActivity(intent)
 
 
 
