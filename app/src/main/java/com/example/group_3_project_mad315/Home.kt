@@ -35,11 +35,12 @@ class Home : AppCompatActivity() {
 
     fun userName_check():Boolean{
         val user_name = findViewById<EditText>(R.id.user_name)
-        if(user_name.text.equals("")){
+        if(user_name.text.length < 1){
             Toast.makeText(this,"No username given!",Toast.LENGTH_SHORT)
             return false
         }
         else{
+            Toast.makeText(this,user_name.text,Toast.LENGTH_SHORT)
             return true
         }
     }
