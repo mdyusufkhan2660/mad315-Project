@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.example.group_3_project_mad315.ballblock.Start
 import com.example.group_3_project_mad315.tictactoe.TictacActivity
 import com.example.hangmangame.Hangman_MainActivity
 import com.example.mad315_spaceshooter.spaceshooter.SpaceShooter_MainActivity
@@ -44,6 +45,8 @@ class Game_List : AppCompatActivity() {
 
         game4.setOnClickListener {
             Toast.makeText(applicationContext,"Game 4 Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Start::class.java))
+            finish()
         }
 
 

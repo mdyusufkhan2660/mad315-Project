@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bb_bg_all"
+    tools:context=".ballblock.Start">
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="Ball &amp; Block"
+        android:textColor="@color/bb_bolckandblock"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/LL_play"
+        >
+        <TextView
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/bb_bolckandblock"
+            android:textSize="30dp"
+            android:text="P l"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/bb_ic_baseline_play_arrow_24"
+            android:id="@+id/iv_play"
+            />
+
+        <TextView
+            android:id="@+id/btn_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/bb_bolckandblock"
+            android:textSize="30dp"
+            android:text="Y"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/iv_exit"
+        android:src="@drawable/bb_ic_baseline_exit_to_app_24"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        />
+
+</RelativeLayout>
