@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
 class Home : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -16,14 +18,29 @@ class Home : AppCompatActivity() {
         val btn2 = findViewById<Button>(R.id.random_game)
 
         btn1.setOnClickListener {
-            val intent = Intent(this, Game_List::class.java)
-            startActivity(intent)
+            if(userName_check()){
+                val intent = Intent(this, Game_List::class.java)
+                startActivity(intent)
+            }
         }
 
         btn2.setOnClickListener {
-            val intent = Intent(this, Card_Game_Info::class.java)
-            startActivity(intent)
+            if (userName_check()){
+                val intent = Intent(this, Card_Game_Info::class.java)
+                startActivity(intent)
+            }
         }
 
+    }
+
+    fun userName_check():Boolean{
+        val user_name = findViewById<EditText>(R.id.user_name)
+        if(user_name.text.equals("")){
+            Toast.makeText(this,"No username given!",Toast.LENGTH_SHORT)
+            return false
+        }
+        else{
+            return true
+        }
     }
 }
