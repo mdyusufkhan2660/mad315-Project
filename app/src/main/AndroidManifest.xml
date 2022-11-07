@@ -64,6 +64,12 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".tictactoe.Tic_Tak_Toe_MainActivity"
+            android:exported="false" >
+        </activity>
+        <activity android:name=".tictactoe.TictacActivity"></activity>
+
     </application>
 
 </manifest>
