@@ -17,8 +17,8 @@
         app:layout_constraintTop_toBottomOf="@+id/game2"
         app:layout_constraintVertical_bias="0.409">
         <ImageView
-            android:scaleType = "centerCrop"
-            android:src = "@drawable/hangman"
+            android:scaleType = "center"
+            android:src = "@drawable/hang"
             android:layout_width = "match_parent"
             android:layout_height = "match_parent"/>
 
