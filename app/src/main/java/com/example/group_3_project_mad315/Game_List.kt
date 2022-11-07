@@ -29,7 +29,8 @@ class Game_List : AppCompatActivity() {
         val gme4 = findViewById<TextView>(R.id.gme4)
 
         game1.setOnClickListener {
-            Toast.makeText(applicationContext,"Ball and Block Game Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Start::class.java))
+            finish()
         }
 
         game2.setOnClickListener {
@@ -43,9 +44,7 @@ class Game_List : AppCompatActivity() {
         }
 
         game4.setOnClickListener {
-
-            Toast.makeText(applicationContext,"Game 4 Launched",Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, Start::class.java))
+            startActivity(Intent(this, Hangman_MainActivity::class.java))
             finish()
         }
 
