@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Card Match Game</string>
+    <string name="app_name">Group_3_Project_MAD315</string>
+    <string name="label_content_desc_tic_tac_toe_cell">Tic-Tac-Toe Cell</string>
+    <string name="label_reset">Reset</string>
 </resources>
