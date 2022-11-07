@@ -69,7 +69,7 @@ class BNB(context: Context?) : View(context) {
     init {
         startTime = System.currentTimeMillis().toInt()
 
-        ball = BitmapFactory.decodeResource(resources, R.drawable.bb_ball)
+        ball = BitmapFactory.decodeResource(resources, R.drawable.bb_whiteball)
         ball = Bitmap.createScaledBitmap(ball, 30, 30, false)
 
         val metrics : DisplayMetrics = getContext().resources.displayMetrics
