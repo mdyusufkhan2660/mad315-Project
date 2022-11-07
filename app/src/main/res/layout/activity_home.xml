@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bk1"
     tools:context=".Home">
 
     <Button
@@ -19,6 +18,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_name"
         app:layout_constraintVertical_bias="0.41000003" />
+    <ImageView
+        android:scaleType = "centerCrop"
+        android:src = "@drawable/bckgrnd"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"/>
 
     <EditText
         android:id="@+id/user_name"
