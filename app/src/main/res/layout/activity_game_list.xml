@@ -17,8 +17,8 @@
         app:layout_constraintTop_toBottomOf="@+id/game2"
         app:layout_constraintVertical_bias="0.409">
         <ImageView
-            android:scaleType = "fitCenter"
-            android:src = "@drawable/hangman"
+            android:scaleType = "center"
+            android:src = "@drawable/hang"
             android:layout_width = "match_parent"
             android:layout_height = "match_parent"/>
 
@@ -40,15 +40,35 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/ballandblock" />
-   
 
     </androidx.cardview.widget.CardView>
-    <ImageView
-        android:scaleType = "centerCrop"
-        android:src = "@drawable/bckgrnd"
-        android:layout_width = "match_parent"
-        android:layout_height = "match_parent"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/game2"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tictactoe" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bckgrnd"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="-16dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/game3"
@@ -61,10 +81,10 @@
         app:layout_constraintVertical_bias="0.409">
 
         <ImageView
-        android:scaleType = "centerCrop"
-        android:src = "@drawable/spaceshooter"
-        android:layout_width = "match_parent"
-        android:layout_height = "match_parent"/>
+            android:scaleType = "centerCrop"
+            android:src = "@drawable/spaceshooter"
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"/>
 
     </androidx.cardview.widget.CardView>
 
