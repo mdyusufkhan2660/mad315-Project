@@ -28,22 +28,24 @@ class Game_List : AppCompatActivity() {
         val gme4 = findViewById<TextView>(R.id.gme4)
 
         game1.setOnClickListener {
-            startActivity(Intent(this, StartUp::class.java))
-            finish()
+
         }
 
         game2.setOnClickListener {
-            startActivity(Intent(this, Hangman_MainActivity::class.java))
-            finish()
-        }
 
-        game3.setOnClickListener {
             startActivity(Intent(this, TictacActivity::class.java))
             finish()
         }
 
+        game3.setOnClickListener {
+
+            startActivity(Intent(this, StartUp::class.java))
+            finish()
+        }
+
         game4.setOnClickListener {
-            Toast.makeText(applicationContext,"Game 4 Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Hangman_MainActivity::class.java))
+            finish()
         }
 
 
