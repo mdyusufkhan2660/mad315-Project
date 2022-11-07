@@ -50,7 +50,7 @@ class Game_List : AppCompatActivity() {
 
 
         gme1.setOnClickListener {
-            Toast.makeText(applicationContext,"Ball and Block Game Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Start::class.java))
         }
         gme2.setOnClickListener {
             startActivity(Intent(this, TictacActivity::class.java))
