@@ -85,6 +85,8 @@
         </activity>
         <activity android:name=".tictactoe.TictacActivity"></activity>
 
+        <activity android:name=".CardActivity"></activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
