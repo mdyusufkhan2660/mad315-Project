@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -16,11 +17,11 @@ class Hangman_MainActivity : AppCompatActivity() {
     private val gameManager = GameManager()
 
     private lateinit var wordTextView: TextView
-    private lateinit var lettersUsedTextView: TextView
+//    private lateinit var lettersUsedTextView: TextView
     private lateinit var imageView: ImageView
     private lateinit var gameLostTextView: TextView
     private lateinit var gameWonTextView: TextView
-    private lateinit var newGameButton: Button
+    private lateinit var newGameButton: ImageButton
     private lateinit var lettersLayout: ConstraintLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class Hangman_MainActivity : AppCompatActivity() {
         setContentView(R.layout.hangman_activity_main)
         imageView = findViewById(R.id.imageView)
         wordTextView = findViewById(R.id.wordTextView)
-        lettersUsedTextView = findViewById(R.id.lettersUsedTextView)
+//        lettersUsedTextView = findViewById(R.id.lettersUsedTextView)
         gameLostTextView = findViewById(R.id.gameLostTextView)
         gameWonTextView = findViewById(R.id.gameWonTextView)
         newGameButton = findViewById(R.id.newGameButton)
@@ -55,7 +56,7 @@ class Hangman_MainActivity : AppCompatActivity() {
             is GameState.Lost -> showGameLost(gameState.wordToGuess)
             is GameState.Running -> {
                 wordTextView.text = gameState.underscoreWord
-                lettersUsedTextView.text ="Letters used: ${gameState.lettersUsed}"
+//                lettersUsedTextView.text ="Letters used: ${gameState.lettersUsed}"
                 imageView.setImageDrawable(ContextCompat.getDrawable(this, gameState.drawable))
             }
             is GameState.Won -> showGameWon(gameState.wordToGuess)

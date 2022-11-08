@@ -5,14 +5,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#003399"
+    android:background="#ffffff"
     tools:context="com.example.hangmangame.Hangman_MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="410dp"
+        android:layout_height="324dp"
         android:src="@drawable/hangman1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/newGameButton"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/hangman_restart"
+        android:onClick="restart"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.997"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -50,50 +63,48 @@
         android:id="@+id/wordTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="36dp"
         android:gravity="center"
         android:letterSpacing="0.3"
         android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/newGameButton"
         app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:layout_editor_absoluteX="0dp"
         tools:text="_ _ ABCD_ _ _ _ _ _ _  " />
 
-    <TextView
-        android:id="@+id/lettersUsedTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:letterSpacing="0.3"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/wordTextView"
-        tools:text="A, B, C, D, E, F, G" />
-
     <Button
-        android:id="@+id/newGameButton"
+        android:id="@+id/newGameButton1"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#660033"
+        android:backgroundTint="#0000FF"
         android:text="NEW GAME"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lettersUsedTextView" />
+        tools:layout_editor_absoluteY="332dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lettersLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newGameButton">
+        app:layout_constraintTop_toBottomOf="@+id/newGameButton1">
 
         <androidx.constraintlayout.helper.widget.Flow
             android:id="@+id/layer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="396dp"
+            android:layout_height="258dp"
             android:padding="16dp"
             app:constraint_referenced_ids="a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"
+            app:flow_horizontalGap="-10dp"
             app:flow_wrapMode="aligned"
-            tools:layout_editor_absoluteX="26dp"
-            tools:layout_editor_absoluteY="77dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
                 android:id="@+id/a"
