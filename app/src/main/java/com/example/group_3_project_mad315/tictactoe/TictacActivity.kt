@@ -1,5 +1,6 @@
 package com.example.group_3_project_mad315.tictactoe
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -9,14 +10,24 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+
+import com.example.group_3_project_mad315.Game_List
+
 import com.example.group_3_project_mad315.R
+
 import com.example.group_3_project_mad315.databinding.ActivityTictacBinding
 import com.example.group_3_project_mad315.databinding.ActivityMainBinding
 import com.example.group_3_project_mad315.tictactoe.models.Board
 import com.example.group_3_project_mad315.tictactoe.models.BoardState
 import com.example.group_3_project_mad315.tictactoe.models.Cell
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class TictacActivity : AppCompatActivity() {
+    lateinit var db_sharedPref: SharedPreferences
+    var db_editor: SharedPreferences.Editor? = null
+
+    var totalScore = 0
     private var starsScore = 0
     private var crossScore = 0
     private var game_over:Boolean=false
@@ -48,10 +59,12 @@ class TictacActivity : AppCompatActivity() {
 
         when (board.boardState) {
 
-            BoardState.STAR_WON -> {
+           BoardState.STAR_WON -> {
+                totalScore++
                 starsScore ++
-                setupBoard("User Won")
-                showWinningMessage("User Won!")
+                addScore()
+                setupBoard("Stars WON")
+                showWinningMessage("Stars Won!")
             }
             BoardState.CIRCLE_WON -> {
                 crossScore ++
@@ -163,9 +176,39 @@ class TictacActivity : AppCompatActivity() {
             editor.apply()
             count=0
         }
-
     }
 
+    override fun onBackPressed(){
+        val i = Intent(this@TictacActivity, Game_List::class.java)
+        startActivity(i)
+    }
+    fun addScore() {
+        //Saving the username in sharedpreference
+        db_sharedPref = getSharedPreferences("mad315", MODE_PRIVATE)
+        db_editor = db_sharedPref.edit()
+        db_editor!!.putString("ttt_score", totalScore.toString())
+        db_editor!!.apply()
+        //Getting the username from shared preference
+        Log.d("ttt_score: ", db_sharedPref.getString("ttt_score","0").toString())
 
+        Firebase.firestore.collection("users").get().addOnSuccessListener {
+                result ->
+            for (document in result) {
+                if (document.data.getValue("name").toString().equals(db_sharedPref.getString("name","0").toString())){
+                    if(document.data.getValue("ttt_score").toString().equals("")){
+                        savePoints(document.id, totalScore)
+                        Log.d("Points: ", totalScore.toString())
+                    }
+                    else if(Integer.parseInt(document.data.getValue("ttt_score").toString()) < totalScore){
+                        savePoints(document.id, totalScore)
+                        Log.d("New High score Points: ", totalScore.toString())
+                    }
+                }
+            }
+        }
+    }
 
+    fun savePoints(id: String, points: Int) {
+        Firebase.firestore.collection("users").document(id).update("ttt_score", points.toString())
+    }
 }
