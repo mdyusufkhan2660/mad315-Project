@@ -102,13 +102,13 @@ class CardActivity : AppCompatActivity() {
 
             Log.i("tag",cards[position1].identifier.toString())
 
-            if(cards[position1].identifier==2131231010){
+            if(cards[position1].identifier==2131231012){
 //                Toast.makeText(this, "heart launched", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, TictacActivity::class.java)
                 startActivity(intent)
 
             }
-            else if (cards[position1].identifier==2131230990)
+            else if (cards[position1].identifier==2131230992)
             {
                 // Toast.makeText(this, "lightening launched", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, StartUp::class.java)
