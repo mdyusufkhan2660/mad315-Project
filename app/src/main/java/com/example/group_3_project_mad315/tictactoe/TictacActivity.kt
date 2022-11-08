@@ -4,12 +4,17 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+
 import com.example.group_3_project_mad315.Game_List
+
+import com.example.group_3_project_mad315.R
+
 import com.example.group_3_project_mad315.databinding.ActivityTictacBinding
 import com.example.group_3_project_mad315.databinding.ActivityMainBinding
 import com.example.group_3_project_mad315.tictactoe.models.Board
@@ -54,7 +59,7 @@ class TictacActivity : AppCompatActivity() {
 
         when (board.boardState) {
 
-            BoardState.STAR_WON -> {
+           BoardState.STAR_WON -> {
                 totalScore++
                 starsScore ++
                 addScore()
@@ -63,8 +68,8 @@ class TictacActivity : AppCompatActivity() {
             }
             BoardState.CIRCLE_WON -> {
                 crossScore ++
-                setupBoard("Circles WON")
-                showWinningMessage("Circles Won!")
+                setupBoard("Computer Won")
+                showWinningMessage("Computer Won!")
             }
             BoardState.DRAW -> {
                 setupBoard("Draw")
@@ -140,13 +145,14 @@ class TictacActivity : AppCompatActivity() {
             }
         }
         if (game_over!=true) {
-            val message = "\nSTAR_WON $starsScore\n\nCIRCLE_WON $crossScore"
+            val message = "\nUSER $starsScore\n\nComputer $crossScore"
 
 
-            AlertDialog.Builder(this)
+            AlertDialog.Builder(this, )
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton("Reset")
+
 
                 { _, _ ->
 
@@ -158,6 +164,8 @@ class TictacActivity : AppCompatActivity() {
 
                 .setCancelable(false)
                 .show()
+         .window?.setGravity(Gravity.TOP)
+
 
         }
         if(game_over==true){
