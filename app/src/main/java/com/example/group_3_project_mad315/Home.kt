@@ -19,7 +19,6 @@ class Home : AppCompatActivity() {
     var editor: SharedPreferences.Editor? = null
 
     val db = Firebase.firestore
-    var userNames: ArrayList<String> = ArrayList()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,14 +31,15 @@ class Home : AppCompatActivity() {
 
         btn1.setOnClickListener {
             if(userName_nullcheck(user_name)){
-                getUserNames()
-                if (userNames.contains(user_name.text.toString())){
-                    runGamelist()
-                    Log.d("TAG", "name found")
-                }
-                else{
-                    addName(user_name)
-                    Log.d("TAG", "name not found")
+                val test = db.collection("users").document(user_name.text.toString()).get().addOnSuccessListener {
+                    result ->
+                        if (result.data == null){
+                            addName(user_name)
+                            runGamelist()
+                        }
+                    else{
+                        runGamelist()
+                        }
                 }
             }
         }
@@ -64,17 +64,6 @@ class Home : AppCompatActivity() {
         }
     }
 
-    fun getUserNames(){
-        db.collection("users").get().addOnSuccessListener {
-                result ->
-                for (document in result) {
-                        userNames.add(document.data.getValue("name").toString())
-                    }
-                }
-            .addOnFailureListener {
-            }
-    }
-
     fun addName(user_name: EditText){
         val user = hashMapOf(
             "name" to user_name.text.toString(),
@@ -83,12 +72,9 @@ class Home : AppCompatActivity() {
             "ss_score" to "",
             "ttt_score" to ""
         )
-        db.collection("users")
-            .add(user)
+        db.collection("users").document(user_name.text.toString()).set(user)
             .addOnSuccessListener { documentReference ->
-
-                Log.d("TAG", "DocumentSnapshot added with ID: ${documentReference.id}")
-                runGamelist()
+                Log.d("TAG", "DocumentSnapshot added with ID: ${documentReference}")
             }
             .addOnFailureListener { e ->
                 Log.w("Tag", "Error adding document", e)

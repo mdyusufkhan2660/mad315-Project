@@ -33,19 +33,15 @@ class GameOver : AppCompatActivity()  {
         //Getting the username from shared preference
         Log.d("ss_score: ", sharedPreferences.getString("ss_score","0").toString())
 
-        Firebase.firestore.collection("users").get().addOnSuccessListener {
+        Firebase.firestore.collection("users").document(sharedPreferences.getString("name","0").toString()).get().addOnSuccessListener {
                 result ->
-            for (document in result) {
-                if (document.data.getValue("name").toString().equals(sharedPreferences.getString("name","0").toString())){
-                    if(document.data.getValue("ss_score").toString().equals("")){
-                        savePoints(document.id, points)
-                        Log.d("Points: ", points.toString())
-                    }
-                    else if(Integer.parseInt(document.data.getValue("ss_score").toString()) < points){
-                        savePoints(document.id, points)
-                        Log.d("New High score Points: ", points.toString())
-                    }
-                }
+            if(result.data!!.getValue("ss_score").toString().equals("")){
+                savePoints(sharedPreferences.getString("name","test")!!, points)
+                Log.d("Points: ", points.toString())
+            }
+            else if(Integer.parseInt(result.data!!.getValue("ss_score").toString()) < points){
+                savePoints(sharedPreferences.getString("name","test")!!, points)
+                Log.d("New High score Points: ", points.toString())
             }
         }
     }
