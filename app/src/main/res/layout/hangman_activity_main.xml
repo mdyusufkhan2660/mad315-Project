@@ -17,8 +17,8 @@
 
     <ImageButton
         android:id="@+id/newGameButton"
-        android:layout_width="52dp"
-        android:layout_height="55dp"
+        android:layout_width="42dp"
+        android:layout_height="47dp"
         android:layout_marginBottom="268dp"
         android:background="@drawable/hangman_restart"
         android:onClick="restart"
@@ -416,6 +416,16 @@
             android:text="Z"
             android:textSize="24dp"
             android:paddingHorizontal="10dp" />
+
+        <TextView
+            android:id="@+id/lettersUsedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:letterSpacing="0.3"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteY="18dp"
+            tools:text="A, B, C, D, E, F, G" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
