@@ -5,15 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context="com.example.hangmangame.Hangman_MainActivity">
 
+    tools:context="com.example.hangmangame.Hangman_MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bckgrnd"/>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="410dp"
         android:layout_height="324dp"
         android:src="@drawable/hangman1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.050000012" />
 
     <ImageButton
         android:id="@+id/newGameButton"
@@ -59,39 +65,16 @@
         app:layout_constraintStart_toStartOf="@id/imageView"
         app:layout_constraintTop_toTopOf="@id/imageView" />
 
-    <TextView
-        android:id="@+id/wordTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="36dp"
-        android:gravity="center"
-        android:letterSpacing="0.3"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@+id/newGameButton"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        tools:layout_editor_absoluteX="0dp"
-        tools:text="_ _ ABCD_ _ _ _ _ _ _  " />
-
-    <Button
-        android:id="@+id/newGameButton1"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#0000FF"
-        android:text="NEW GAME"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="332dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lettersLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newGameButton1">
+
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.5"
+        tools:layout_editor_absoluteX="0dp">
 
         <androidx.constraintlayout.helper.widget.Flow
             android:id="@+id/layer"
@@ -104,18 +87,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-                android:id="@+id/a"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/design_default_color_primary"
-                android:backgroundTint="#cc3300"
-                android:text="A"
-                android:paddingHorizontal="10dp"
-                android:textColor="@color/white"
-                android:textSize="24dp"/>
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/design_default_color_primary"
+            android:backgroundTint="#cc3300"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
+            android:text="A"
+            android:textColor="@color/white"
+            android:textSize="31dp" />
 
 
         <TextView
@@ -124,10 +109,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="B"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -136,10 +124,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="C"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="86dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -148,10 +139,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="D"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -160,10 +154,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="E"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -172,10 +169,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="F"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="166dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -184,10 +184,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="G"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="190dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -196,10 +199,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="H"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -208,10 +214,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="I"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="250dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -220,10 +229,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="J"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="275dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -232,10 +244,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="K"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="303dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -244,10 +259,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="L"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="330dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -256,10 +274,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="M"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="354dp"
+            tools:layout_editor_absoluteY="70dp" />
 
 
         <TextView
@@ -268,10 +289,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="N"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -280,10 +304,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="O"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -292,10 +319,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="P"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="87dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -304,10 +334,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="Q"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -316,10 +349,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="R"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -328,10 +364,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="S"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -340,10 +379,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="T"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="191dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -352,10 +394,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="U"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -364,10 +409,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="V"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="245dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -376,10 +424,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="W"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="271dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -388,10 +439,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="X"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="303dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -400,10 +454,13 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="Y"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="329dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
         <TextView
@@ -412,21 +469,31 @@
             android:layout_height="wrap_content"
             android:background="@color/design_default_color_primary"
             android:backgroundTint="#cc3300"
-            android:textColor="@color/white"
+            android:fontFamily="@font/audiowide"
+            android:paddingHorizontal="10dp"
             android:text="Z"
-            android:textSize="24dp"
-            android:paddingHorizontal="10dp" />
-
-        <TextView
-            android:id="@+id/lettersUsedTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:letterSpacing="0.3"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteY="18dp"
-            tools:text="A, B, C, D, E, F, G" />
+            android:textColor="@color/white"
+            android:textSize="31dp"
+            tools:layout_editor_absoluteX="357dp"
+            tools:layout_editor_absoluteY="156dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/wordTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:letterSpacing="0.3"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/lettersLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.94"
+        tools:text="_ _ ABCD_ _ _ _ _ _ _  " />
 </androidx.constraintlayout.widget.ConstraintLayout>
