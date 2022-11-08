@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Scores">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bckgrnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/audiowide"
+        android:text="Your Best Scores"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <ImageView
+        android:id="@+id/ball_score"
+        android:layout_width="69dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/ballandblock" />
+
+    <ImageView
+        android:id="@+id/tictac_score"
+        android:layout_width="69dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ball_score"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/tictactoe" />
+
+    <ImageView
+        android:id="@+id/shooter_score"
+        android:layout_width="69dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tictac_score"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/spaceshooter" />
+
+    <ImageView
+        android:id="@+id/hang_score"
+        android:layout_width="69dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shooter_score"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/hangman" />
+
+    <TextView
+        android:id="@+id/ball_score_view"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Ball Game Score"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toEndOf="@+id/ball_score"
+        app:layout_constraintTop_toBottomOf="@+id/score"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <TextView
+        android:id="@+id/shooter_score_view"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Space Shooter Score"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toEndOf="@+id/shooter_score"
+        app:layout_constraintTop_toBottomOf="@+id/tictac_score_view"
+        app:layout_constraintVertical_bias="0.160" />
+
+    <TextView
+        android:id="@+id/hang_score_score"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Hangman Score"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toEndOf="@+id/hang_score"
+        app:layout_constraintTop_toBottomOf="@+id/shooter_score_view"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <TextView
+        android:id="@+id/tictac_score_view"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Tic Tac Toe Score"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toEndOf="@+id/tictac_score"
+        app:layout_constraintTop_toBottomOf="@+id/ball_score_view"
+        app:layout_constraintVertical_bias="0.153" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

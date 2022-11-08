@@ -108,7 +108,7 @@ class CardActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
-            else if (cards[position1].identifier==2131230969)
+            else if (cards[position1].identifier==2131230990)
             {
                 // Toast.makeText(this, "lightening launched", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, StartUp::class.java)
@@ -123,7 +123,7 @@ class CardActivity : AppCompatActivity() {
 
 
             }
-            else if (cards[position1].identifier==2131230868)
+            else if (cards[position1].identifier==2131230889)
             {
 
                 val intent = Intent(this@CardActivity,  Hangman_MainActivity::class.java)

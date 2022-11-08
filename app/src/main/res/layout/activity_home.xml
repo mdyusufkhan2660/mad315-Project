@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
+    <ImageView
+        android:scaleType = "centerCrop"
+        android:src = "@drawable/bckgrnd"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"/>
+
     <Button
         android:id="@+id/game_list"
         android:layout_width="250dp"
@@ -20,11 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_name"
         app:layout_constraintVertical_bias="0.41000003" />
-    <ImageView
-        android:scaleType = "centerCrop"
-        android:src = "@drawable/bckgrnd"
-        android:layout_width = "match_parent"
-        android:layout_height = "match_parent"/>
+
 
     <EditText
         android:id="@+id/user_name"
@@ -58,6 +60,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game_list"
-        app:layout_constraintVertical_bias="0.050000012" />
+        app:layout_constraintVertical_bias="0.05" />
+
+    <Button
+        android:id="@+id/scores"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bk"
+        android:fontFamily="@font/audiowide"
+        android:text="High Scores"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/random_game"
+        app:layout_constraintVertical_bias="0.05" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
