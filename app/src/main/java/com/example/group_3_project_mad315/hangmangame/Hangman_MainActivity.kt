@@ -17,7 +17,7 @@ class Hangman_MainActivity : AppCompatActivity() {
     private val gameManager = GameManager()
 
     private lateinit var wordTextView: TextView
-//    private lateinit var lettersUsedTextView: TextView
+    private lateinit var lettersUsedTextView: TextView
     private lateinit var imageView: ImageView
     private lateinit var gameLostTextView: TextView
     private lateinit var gameWonTextView: TextView
@@ -29,7 +29,7 @@ class Hangman_MainActivity : AppCompatActivity() {
         setContentView(R.layout.hangman_activity_main)
         imageView = findViewById(R.id.imageView)
         wordTextView = findViewById(R.id.wordTextView)
-//        lettersUsedTextView = findViewById(R.id.lettersUsedTextView)
+        lettersUsedTextView = findViewById(R.id.lettersUsedTextView)
         gameLostTextView = findViewById(R.id.gameLostTextView)
         gameWonTextView = findViewById(R.id.gameWonTextView)
         newGameButton = findViewById(R.id.newGameButton)
