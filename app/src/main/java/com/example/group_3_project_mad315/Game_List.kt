@@ -66,4 +66,8 @@ class Game_List : AppCompatActivity() {
         }
 
     }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this, Home::class.java))
+    }
 }
