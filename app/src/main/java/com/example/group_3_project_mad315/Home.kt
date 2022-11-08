@@ -53,8 +53,10 @@ class Home : AppCompatActivity() {
         }
         val btn3 = findViewById<Button>(R.id.scores)
         btn3.setOnClickListener {
-            val intent = Intent(this, Scores::class.java)
-            startActivity(intent)
+            if (userName_nullcheck(user_name)) {
+                val intent = Intent(this, Scores::class.java)
+                startActivity(intent)
+            }
         }
 
     }
