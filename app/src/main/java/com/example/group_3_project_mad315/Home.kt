@@ -2,6 +2,7 @@ package com.example.group_3_project_mad315
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,8 +11,12 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.hangman_activity_main.view.*
 
 class Home : AppCompatActivity() {
+    lateinit var sharedPreferences: SharedPreferences
+    var editor: SharedPreferences.Editor? = null
 
     val db = Firebase.firestore
     var userNames: ArrayList<String> = ArrayList()
@@ -92,6 +97,19 @@ class Home : AppCompatActivity() {
     }
 
     fun runGamelist(){
+
+        //Saving the username in sharedpreference
+        sharedPreferences = getSharedPreferences("mad315", MODE_PRIVATE)
+        editor = sharedPreferences.edit()
+        editor!!.putString("name", user_name.text.toString())
+        editor!!.putString("ss_score", "0")
+        editor!!.putString("bb_score", "0")
+        editor!!.putString("hm_score", "0")
+        editor!!.putString("ttt_score", "0")
+        editor!!.apply()
+        //Getting the username from shared preference
+        Log.d("Logged in user: ", sharedPreferences.getString("name","defaultName").toString())
+
         val intent = Intent(this, Game_List::class.java)
         startActivity(intent)
     }
