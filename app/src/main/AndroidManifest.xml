@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Splash_Screen"
+
             android:name="com.example.group_3_project_mad315.Splash_Screen"
             android:exported="true">
             <intent-filter>
@@ -34,7 +34,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Card_Game_Info"
+
             android:name="com.example.group_3_project_mad315.Card_Game_Info"
 
             android:exported="false">
@@ -118,3 +118,5 @@
     </application>
 
 </manifest>
+<!--    android:name=".Splash_Screen"-->
+<!--    android:name=".Card_Game_Info"-->
