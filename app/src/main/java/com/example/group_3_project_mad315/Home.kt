@@ -14,6 +14,7 @@ class Home : AppCompatActivity() {
 
         val btn1 = findViewById<Button>(R.id.game_list)
         val btn2 = findViewById<Button>(R.id.random_game)
+        val btn3 = findViewById<Button>(R.id.scores)
 
         btn1.setOnClickListener {
             val intent = Intent(this, Game_List::class.java)
@@ -22,6 +23,11 @@ class Home : AppCompatActivity() {
 
         btn2.setOnClickListener {
             val intent = Intent(this, Card_Game_Info::class.java)
+            startActivity(intent)
+        }
+
+        btn3.setOnClickListener {
+            val intent = Intent(this, Scores::class.java)
             startActivity(intent)
         }
 
