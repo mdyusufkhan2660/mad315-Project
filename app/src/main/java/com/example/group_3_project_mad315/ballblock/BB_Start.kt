@@ -38,10 +38,5 @@ class Start : AppCompatActivity() {
             startActivity(i)
         }
 
-        val iv_exit = findViewById<ImageView>(R.id.iv_exit)
-        iv_exit.setOnClickListener {
-            val i = Intent(this,Home::class.java)
-            startActivity(i)
-        }
     }
 }
