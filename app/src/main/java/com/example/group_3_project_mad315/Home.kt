@@ -28,6 +28,7 @@ class Home : AppCompatActivity() {
 
         val btn1 = findViewById<Button>(R.id.game_list)
         val btn2 = findViewById<Button>(R.id.random_game)
+        val btn3 = findViewById<Button>(R.id.scores)
         val user_name = findViewById<EditText>(R.id.user_name)
 
         btn1.setOnClickListener {
@@ -109,6 +110,11 @@ class Home : AppCompatActivity() {
         editor!!.apply()
         //Getting the username from shared preference
         Log.d("Logged in user: ", sharedPreferences.getString("name","defaultName").toString())
+
+        btn3.setOnClickListener {
+            val intent = Intent(this, Scores::class.java)
+            startActivity(intent)
+        }
 
         val intent = Intent(this, Game_List::class.java)
         startActivity(intent)
