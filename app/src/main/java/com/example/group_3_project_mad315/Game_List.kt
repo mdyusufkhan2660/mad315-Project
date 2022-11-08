@@ -30,39 +30,39 @@ class Game_List : AppCompatActivity() {
 
         game1.setOnClickListener {
             startActivity(Intent(this, Start::class.java))
-            finish()
+
         }
 
         game2.setOnClickListener {
             startActivity(Intent(this, TictacActivity::class.java))
-            finish()
+
         }
 
         game3.setOnClickListener {
             startActivity(Intent(this, StartUp::class.java))
-            finish()
+
         }
 
         game4.setOnClickListener {
             startActivity(Intent(this, Hangman_MainActivity::class.java))
-            finish()
+
         }
 
 
         gme1.setOnClickListener {
-            Toast.makeText(applicationContext,"Ball and Block Game Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Start::class.java))
         }
         gme2.setOnClickListener {
             startActivity(Intent(this, TictacActivity::class.java))
-            finish()
+
         }
         gme3.setOnClickListener {
             startActivity(Intent(this, StartUp::class.java))
-            finish()
+
         }
         gme4.setOnClickListener {
             startActivity(Intent(this, Hangman_MainActivity::class.java))
-            finish()
+
         }
 
     }

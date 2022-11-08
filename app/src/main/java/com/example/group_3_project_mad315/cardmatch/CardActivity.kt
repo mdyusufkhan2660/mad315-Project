@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.group_3_project_mad315.ballblock.Start
 import com.example.group_3_project_mad315.tictactoe.TictacActivity
 import com.example.hangmangame.Hangman_MainActivity
 import com.example.spaceshooter.StartUp
@@ -101,7 +102,7 @@ class CardActivity : AppCompatActivity() {
 
             Log.i("tag",cards[position1].identifier.toString())
 
-            if(cards[position1].identifier==2131230989){
+            if(cards[position1].identifier==2131231010){
 //                Toast.makeText(this, "heart launched", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, TictacActivity::class.java)
                 startActivity(intent)
@@ -118,15 +119,14 @@ class CardActivity : AppCompatActivity() {
             else if (cards[position1].identifier==2131230836)
             {
                 Toast.makeText(this, "Ball and Block ", Toast.LENGTH_SHORT).show()
-                //   val intent = Intent(this, SomeActivity::class.java)
-                //    startActivity(intent)
+                startActivity(Intent(this@CardActivity, Start::class.java))
 
 
             }
             else if (cards[position1].identifier==2131230868)
             {
 
-                val intent = Intent(this, Hangman_MainActivity::class.java)
+                val intent = Intent(this@CardActivity,  Hangman_MainActivity::class.java)
                 startActivity(intent)
 
 
