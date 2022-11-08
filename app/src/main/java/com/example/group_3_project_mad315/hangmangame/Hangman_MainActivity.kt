@@ -72,7 +72,7 @@ class Hangman_MainActivity : AppCompatActivity() {
 
     private fun showGameWon(wordToGuess: String){
         wordTextView.text = wordToGuess
-        gameLostTextView.visibility = View.VISIBLE
+        gameWonTextView.visibility = View.VISIBLE
         lettersLayout.visibility = View.GONE
     }
 

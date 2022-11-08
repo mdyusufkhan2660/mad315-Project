@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/drawable/ic_blank.xml" value="0.1535" />
         <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/drawable/ic_circle.xml" value="0.1385" />
+        <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/drawable/ic_code.xml" value="0.197" />
         <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/drawable/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/drawable/ic_star.xml" value="0.1385" />
+        <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/layout/activity_card.xml" value="0.2033514492753623" />
+        <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/layout/activity_card_game.xml" value="0.1984375" />
+        <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/layout/activity_card_game_info.xml" value="0.1984375" />
         <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/layout/activity_game_list.xml" value="0.4" />
         <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/layout/activity_space_shooter_main.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/mdyus/OneDrive/Documents/GitHub/mad315-Project/app/src/main/res/layout/spaceshooter_gameover.xml" value="0.11302083333333333" />
@@ -15,7 +19,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

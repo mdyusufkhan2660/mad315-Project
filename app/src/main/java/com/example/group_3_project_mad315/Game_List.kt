@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.example.group_3_project_mad315.ballblock.Start
 import com.example.group_3_project_mad315.tictactoe.TictacActivity
 import com.example.hangmangame.Hangman_MainActivity
 import com.example.mad315_spaceshooter.spaceshooter.SpaceShooter_MainActivity
@@ -28,39 +29,40 @@ class Game_List : AppCompatActivity() {
         val gme4 = findViewById<TextView>(R.id.gme4)
 
         game1.setOnClickListener {
-            Toast.makeText(applicationContext,"Ball and Block Game Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Start::class.java))
+
         }
 
         game2.setOnClickListener {
             startActivity(Intent(this, TictacActivity::class.java))
-            finish()
+
         }
 
         game3.setOnClickListener {
             startActivity(Intent(this, StartUp::class.java))
-            finish()
+
         }
 
         game4.setOnClickListener {
             startActivity(Intent(this, Hangman_MainActivity::class.java))
-            finish()
+
         }
 
 
         gme1.setOnClickListener {
-            Toast.makeText(applicationContext,"Ball and Block Game Launched",Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, Start::class.java))
         }
         gme2.setOnClickListener {
             startActivity(Intent(this, TictacActivity::class.java))
-            finish()
+
         }
         gme3.setOnClickListener {
             startActivity(Intent(this, StartUp::class.java))
-            finish()
+
         }
         gme4.setOnClickListener {
             startActivity(Intent(this, Hangman_MainActivity::class.java))
-            finish()
+
         }
 
     }

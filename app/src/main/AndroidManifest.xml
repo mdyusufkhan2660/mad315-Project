@@ -21,6 +21,7 @@
         </activity>
         <activity
             android:name=".Splash_Screen"
+            android:name="com.example.group_3_project_mad315.Splash_Screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +35,8 @@
         </activity>
         <activity
             android:name=".Card_Game_Info"
+            android:name="com.example.group_3_project_mad315.Card_Game_Info"
+
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -78,14 +81,40 @@
         <activity
             android:name="com.example.hangmangame.Hangman_MainActivity"
             android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".tictactoe.Tic_Tak_Toe_MainActivity"
             android:exported="false"></activity>
         <activity android:name=".tictactoe.TictacActivity" />
 
+        <activity android:name=".CardActivity"></activity>
+        
+
+        <activity
+            android:name="com.example.group_3_project_mad315.ballblock.End"
+            android:exported="false"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.example.group_3_project_mad315.ballblock.Game"
+            android:exported="false"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.example.group_3_project_mad315.ballblock.Start"
+            android:exported="false"
+            android:screenOrientation="landscape"></activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
