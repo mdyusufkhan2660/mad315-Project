@@ -51,6 +51,11 @@ class Home : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        val btn3 = findViewById<Button>(R.id.scores)
+        btn3.setOnClickListener {
+            val intent = Intent(this, Scores::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -83,6 +88,7 @@ class Home : AppCompatActivity() {
             }
     }
 
+
     fun runGamelist(){
 
         //Saving the username in sharedpreference
@@ -96,11 +102,7 @@ class Home : AppCompatActivity() {
         editor!!.apply()
         //Getting the username from shared preference
         Log.d("Logged in user: ", sharedPreferences.getString("name","defaultName").toString())
-        val btn3 = findViewById<Button>(R.id.scores)
-        btn3.setOnClickListener {
-            val intent = Intent(this, Scores::class.java)
-            startActivity(intent)
-        }
+
 
         val intent = Intent(this, Game_List::class.java)
         startActivity(intent)
