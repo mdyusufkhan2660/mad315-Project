@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -135,24 +137,10 @@ class TictacActivity : AppCompatActivity() {
             val message = "\nUSER $starsScore\n\nComputer $crossScore"
 
 
-            AlertDialog.Builder(this, )
-                .setTitle(title)
-                .setMessage(message)
-                .setPositiveButton("Reset")
-
-
-                { _, _ ->
-
-                    vm.resetBoard()
-
-
-                }
-
-
-                .setCancelable(false)
-                .show()
-         .window?.setGravity(Gravity.TOP)
-
+            val userScore : TextView = findViewById(R.id.userScore)
+            userScore.text = "$starsScore"
+            val computerScore : TextView = findViewById(R.id.computerScore)
+            computerScore.text = "$crossScore"
 
         }
         if(game_over==true){

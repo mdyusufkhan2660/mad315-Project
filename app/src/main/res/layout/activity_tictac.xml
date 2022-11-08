@@ -167,6 +167,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/square_7" />
 
+
     <TextView
         android:id="@+id/text_winning_message"
         android:layout_width="match_parent"
@@ -181,5 +182,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Stars Won!" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="81dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/audiowide"
+        android:text="USER"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userScore"
+        android:layout_width="81dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/audiowide"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/audiowide"
+        android:text="COMPUTER"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/computerScore"
+        android:layout_width="81dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/audiowide"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toEndOf="@+id/userScore"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
