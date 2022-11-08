@@ -136,11 +136,12 @@ class BNB(context: Context?) : View(context) {
 
         if (yellowx < -400) {
             yellowx = width!! + 21
-            yellowy = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            do{
+                yellowy = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            } while ((yellowchecklength(yellowx, yellowy, yellowblock.width,  yellowblock.height)))
 
             val blockwidth = floor((Math.random() * 500) + 70).toInt()
             yellowblock = Bitmap.createScaledBitmap(yellowblock, blockwidth, 30, false)
-
         }
         canvas.drawBitmap(yellowblock, yellowx.toFloat(), yellowy.toFloat(), null)
 
@@ -157,12 +158,16 @@ class BNB(context: Context?) : View(context) {
         }
         if (greenx < -400) {
             greenx = width!! + 100
-            greeny = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            do{
+                greeny = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            }while ((greenchecklength(greenx, greeny, greenblock.width, greenblock.height)))
 
             val blockwidth = floor((Math.random() * 500) + 70).toInt()
             greenblock = Bitmap.createScaledBitmap(greenblock, blockwidth, 30, false)
         }
         canvas.drawBitmap(greenblock, greenx.toFloat(), greeny.toFloat(), null)
+
+
 
         bluex -= bluespeed
         if (collision(bluex, bluey, blueblock.width,  blueblock.height)) {
@@ -178,13 +183,16 @@ class BNB(context: Context?) : View(context) {
         if(bluex < -400)
         {
             bluex = width!! + 70
-            bluey = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            do {
+                bluey = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            }while ((bluechecklength(bluex, bluey, blueblock.width,  blueblock.height)))
 
             val blockwidth = floor((Math.random() * 500) + 70).toInt()
             blueblock = Bitmap.createScaledBitmap(blueblock, blockwidth, 30, false)
 
         }
         canvas.drawBitmap(blueblock, bluex.toFloat(), bluey.toFloat(), null)
+
 
         redx -= redspeed
         if (collision(redx, redy, redblock.width, redblock.height)) {
@@ -199,7 +207,9 @@ class BNB(context: Context?) : View(context) {
         }
         if (redx < -400) {
             redx = width!! + 50
-            redy = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            do {
+                redy = floor(Math.random() * (maxbally - minbally)).toInt() + minbally
+            }while ((redchecklength(redx, redy, redblock.width, redblock.height)))
 
             val blockwidth = floor((Math.random() * 500) + 70).toInt()
             redblock = Bitmap.createScaledBitmap(redblock, blockwidth, 30, false)
@@ -250,4 +260,59 @@ class BNB(context: Context?) : View(context) {
         return ret
     }
 
+    private var redlen : Boolean = false
+    private fun redchecklength(x: Int, y: Int, w: Int, h: Int): Boolean {
+
+        val blue: Rect = Rect(bluex, bluey,bluex+blueblock.width, bluey + (blueblock.height))
+        val green: Rect = Rect(greenx, greeny,greenx+greenblock.width, greeny + (greenblock.height))
+        val yellow: Rect = Rect(yellowx, yellowy,yellowx+yellowblock.width, yellowy + (yellowblock.height))
+        val redcheck: Rect = Rect(x,y,x+w, y + h)
+
+        if (blue.intersect(redcheck) || green.intersect(redcheck) || yellow.intersect(redcheck) ) {
+            redlen = return true
+        }
+        return redlen
+    }
+
+    private var greenlen : Boolean = false
+    private fun greenchecklength(x: Int, y: Int, w: Int, h: Int): Boolean {
+
+        val blue: Rect = Rect(bluex, bluey,bluex+blueblock.width, bluey + (blueblock.height))
+        val red: Rect = Rect(redx, redy,redx+redblock.width, redy + (redblock.height))
+        val yellow: Rect = Rect(yellowx, yellowy,yellowx+yellowblock.width, yellowy + (yellowblock.height))
+        val greeencheck: Rect = Rect(x,y,x+w, y + h)
+
+        if (blue.intersect(greeencheck) || red.intersect(greeencheck) || yellow.intersect(greeencheck) ) {
+            greenlen = return true
+        }
+        return greenlen
+    }
+
+    private var yellowlen : Boolean = false
+    private fun yellowchecklength(x: Int, y: Int, w: Int, h: Int): Boolean {
+
+        val blue: Rect = Rect(bluex, bluey,bluex+blueblock.width, bluey + (blueblock.height))
+        val green: Rect = Rect(greenx, greeny,greenx+greenblock.width, greeny + (greenblock.height))
+        val red: Rect = Rect(redx, redy,redx+redblock.width, redy + (redblock.height))
+        val yellowcheck: Rect = Rect(x,y,x+w, y + h)
+
+        if (blue.intersect(yellowcheck) || green.intersect(yellowcheck) || red.intersect(yellowcheck) ) {
+            yellowlen = return true
+        }
+        return yellowlen
+    }
+
+    private var bluelen : Boolean = false
+    private fun bluechecklength(x: Int, y: Int, w: Int, h: Int): Boolean {
+
+        val red: Rect = Rect(redx, redy,redx+redblock.width, redy + (redblock.height))
+        val green: Rect = Rect(greenx, greeny,greenx+greenblock.width, greeny + (greenblock.height))
+        val yellow: Rect = Rect(yellowx, yellowy,yellowx+yellowblock.width, yellowy + (yellowblock.height))
+        val bluecheck: Rect = Rect(x,y,x+w, y + h)
+
+        if (red.intersect(bluecheck) || green.intersect(bluecheck) || yellow.intersect(bluecheck) ) {
+            bluelen = return true
+        }
+        return bluelen
+    }
 }

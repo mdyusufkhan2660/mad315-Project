@@ -55,13 +55,4 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:id="@+id/iv_exit"
-        android:src="@drawable/bb_ic_baseline_exit_to_app_24"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        />
-
 </RelativeLayout>
